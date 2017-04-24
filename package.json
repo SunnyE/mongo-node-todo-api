@@ -1,0 +1,22 @@
+{
+  "name": "mongo-node-todo-api",
+  "version": "1.0.0",
+  "description": "A todo app made with node mongoDB mongoose and REST api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunnyE/mongo-node-todo-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SunnyE/mongo-node-todo-api/issues"
+  },
+  "homepage": "https://github.com/SunnyE/mongo-node-todo-api#readme",
+  "dependencies": {
+    "mongodb": "^2.2.26"
+  }
+}
