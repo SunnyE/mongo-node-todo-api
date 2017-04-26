@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SunnyE/mongo-node-todo-api#readme",
   "dependencies": {
-    "mongodb": "^2.2.26"
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.9.6"
   }
 }
