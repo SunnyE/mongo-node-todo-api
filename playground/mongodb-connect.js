@@ -30,17 +30,17 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err,db ) => {
     //     console.log(JSON.stringify(result.ops, undefined, 2));
     // });
 
-    // db.collection('Users').insertOne({
-    //     name: 'Ethan Favia',
-    //     age: 26,
-    //     location: 'New Jersey'
-    // }, (err, results) => {
-    //     if (err) {
-    //         return console.log('Unable to insert User', err);
-    //     };
+    db.collection('Users').insertOne({
+        name: 'Ethan Favia',
+        age: 26,
+        location: 'New Jersey'
+    }, (err, results) => {
+        if (err) {
+            return console.log('Unable to insert User', err);
+        };
 
-    //     console.log(JSON.stringify(results.ops[0]._id.getTimestamp(), undefined, 2));
-    // });
+        console.log(JSON.stringify(results.ops[0]._id.getTimestamp(), undefined, 2));
+    });
 
     db.close();
 });
