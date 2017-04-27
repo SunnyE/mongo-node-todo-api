@@ -30,14 +30,33 @@ var Todo = mongoose.model('Todo', {
 //     console.log('Unable to save todo')
 // });
 
-otherTodo = new Todo({
+var otherTodo = new Todo({
     // text: 'eat lunch', 
     // completed: true, 
     // completedAt: 123
 });
 
-otherTodo.save().then((doc) => {
-    console.log('Saved todo', doc)
-}, (e) => {
-    console.log('unable to save todo')
+// otherTodo.save().then((doc) => {
+//     console.log('Saved todo', doc)
+// }, (e) => {
+//     console.log('unable to save todo')
+// });
+
+var User = mongoose.model('User', {
+    email: {
+        type: String,
+        required: true,
+        trim: true,
+        minLength: 1
+    }
 });
+
+var newUser = new User({
+    email: 'efavia215@live.com'
+});
+
+newUser.save().then((doc) => {
+    console.log('saved user', doc)
+}, (e) => {
+    console.log('unable to save user')
+})
