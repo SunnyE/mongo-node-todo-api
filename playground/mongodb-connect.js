@@ -45,3 +45,40 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err,db ) => {
     db.close();
 });
 
+
+
+
+// // var newTodo = new Todo({
+// //     text: 'Get nintendo Gift card'
+// // });
+
+// // newTodo.save().then((doc) => {
+// //     console.log('Saved todo', doc)
+// // }, (e) => {
+// //     console.log('Unable to save todo')
+// // });
+
+// var otherTodo = new Todo({
+//     // text: 'eat lunch', 
+//     // completed: true, 
+//     // completedAt: 123
+// });
+
+// // otherTodo.save().then((doc) => {
+// //     console.log('Saved todo', doc)
+// // }, (e) => {
+// //     console.log('unable to save todo')
+// // });
+
+
+
+// // var newUser = new User({
+// //     email: 'efavia215@live.com'
+// // });
+
+// // newUser.save().then((doc) => {
+// //     console.log('saved user', doc)
+// // }, (e) => {
+// //     console.log('unable to save user')
+// // })
+
