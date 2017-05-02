@@ -21,7 +21,7 @@ describe('POST /todos', () => {
             })
             .end((err, res) => {
                 if (err) {
-                    return dpne(err)
+                    return done(err)
                 }
                 Todo.find().then((todos) => {
                     expect(todos.length).toBe(1);
@@ -29,5 +29,21 @@ describe('POST /todos', () => {
                     done();
             }).catch((e) => done(e));
         });
-    }); 
+    });
+    it('should not create todo with invalid body data', (done) => {
+
+        request(app)   
+            .post('/todos')
+            .send({})
+            .expect(400)
+            .end((err, res) => {
+                if (err) {
+                    return done(err)
+                }
+            Todo.find().then((todos) => {
+                expect(todos.length).toBe(0);
+                done();
+            }).catch((e) => done(e));
+            })
+    });
 });
