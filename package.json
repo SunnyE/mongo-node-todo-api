@@ -4,12 +4,16 @@
   "description": "A todo app made with node mongoDB mongoose and REST api",
   "main": "index.js",
   "scripts": {
+    "start" : "node server/server.js", 
     "test": "mocha server/**/*.test.js",
     "test-watch": "nodemon --exec npm test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SunnyE/mongo-node-todo-api.git"
+  },
+  "engines": {
+    "node": "6.2.2"
   },
   "author": "",
   "license": "ISC",
