@@ -133,12 +133,30 @@ describe('DELETE /todos/:id', () => {
 
     });
 
-    // it('should return 404 if todo not found', (done) => {
+    it('should return 404 if todo not found', (done) => {
+        var hexID = new ObjectID().toHexString()
 
-    // });
+        request(app)    
+            .delete(`/todos/${hexID}`)
+            .expect(404)
+            .end((err, res) => {
+                if(err) {
+                    return done(err)
+                }
+            done();
+            })
+    });
 
-    // it('should return 404 if object id is invalid', (done) => {
-
-    // });
+    it('should return 404 if object id is invalid', (done) => {
+        request(app)
+            .delete('/todos/1145135')
+            .expect(404)
+            .end((err, res) => {
+                if(err) {
+                    return done(err);
+                }
+            done();
+            })
+    });
 });
 
