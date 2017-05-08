@@ -67,13 +67,7 @@ app.delete('/todos/:id', (req, res) => {
 
     }).catch((e) => {
         res.status(404).send();
-    })
-    // validate the id 
-
-    // remove todo by id
-        // success or error
-            // 404 with empty body
-    
+    });
     
 });
 
