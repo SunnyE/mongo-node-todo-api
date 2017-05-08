@@ -18,32 +18,33 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err,db ) => {
     };
     console.log('Connected to MongoDB server');
 
-    // db.collection('Todos').insertOne({
-    //     text: 'Workout',
-    //     completed: false
-    // }, (err, result) => {
-    //     if (err) {
-    //         return console.log('Unable to insert todo', err);
-
-    //     };
-
-    //     console.log(JSON.stringify(result.ops, undefined, 2));
-    // });
-
-    db.collection('Users').insertOne({
-        name: 'Ethan Favia',
-        age: 26,
-        location: 'New Jersey'
-    }, (err, results) => {
+    db.collection('Todos').insertOne({
+        text: 'Workout',
+        completed: false
+    }, (err, result) => {
         if (err) {
-            return console.log('Unable to insert User', err);
+            return console.log('Unable to insert todo', err);
+
         };
 
-        console.log(JSON.stringify(results.ops[0]._id.getTimestamp(), undefined, 2));
+        console.log(JSON.stringify(result.ops, undefined, 2));
     });
-
-    db.close();
 });
+
+//     db.collection('Users').insertOne({
+//         name: 'Ethan Favia',
+//         age: 26,
+//         location: 'New Jersey'
+//     }, (err, results) => {
+//         if (err) {
+//             return console.log('Unable to insert User', err);
+//         };
+
+//         console.log(JSON.stringify(results.ops[0]._id.getTimestamp(), undefined, 2));
+//     });
+
+//     db.close();
+// });
 
 
 
@@ -81,4 +82,3 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err,db ) => {
 // // }, (e) => {
 // //     console.log('unable to save user')
 // // })
-
