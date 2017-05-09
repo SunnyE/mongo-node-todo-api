@@ -1,6 +1,7 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var {ObjectID} = require('mongodb');
+const _ = require('lodash');
+const express = require('express');
+const bodyParser = require('body-parser');
+const {ObjectID} = require('mongodb');
 
 var {mongoose} = require('./db/mongoose.js');
 var {Todo} = require('./models/todo');
@@ -69,6 +70,12 @@ app.delete('/todos/:id', (req, res) => {
         res.status(404).send();
     });
     
+});
+
+app.patch('/todos/:id', (req, res) => {
+    var id = req.params.id;
+
+    var body = _.pick(req.body, ['text']);
 });
 
 app.listen(port, () => {
