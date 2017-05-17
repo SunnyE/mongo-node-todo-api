@@ -183,13 +183,22 @@ describe('PATCH /todos/:id', () => {
     }); 
 
     it('should clear completedAt when todo is not completed', (done) => {
-        // grab id of second todo item
-        var hexID = todos[0]._id.toHexString(); 
-        // update text set completed to false
-
-        // 200 
-
-        // text is changed, completed is false, completed at is null .toexist 
+        var hexID = todos[1]._id.toHexString();
+        var text = 'New text to be updated'
+        
+        request(app)
+            .patch(`/todos/${hexID}`)
+            .send({
+                text,
+                completed: true
+            })
+            .expect(200)
+            .expect((res) => {
+                expect(res.body.todo.text).toBe(text);
+                expect(res.body.todo.completed).toBe(false)
+                expect(res.body.todo.completedAt).toNotExist();
+            })
+            .end(done)
     });
 }
 
